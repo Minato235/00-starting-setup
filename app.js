@@ -18,7 +18,7 @@ const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 // db.execute("SELECT * FROM  products").then(res=>{
 //     console.log(res);
-// }).catch(err=>{
+// }).catch(err=>{}
 //     console.log(err);
 // })
 

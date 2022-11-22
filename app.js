@@ -1,4 +1,6 @@
 const path = require('path');
+const cors = require('cors');
+
 
 
 const express = require('express');
@@ -10,7 +12,7 @@ const sequelize = require('./util/database');
 
 
 const app = express();
-
+app.use(cors());
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
@@ -30,10 +32,10 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 sequelize.sync().then(res=>{
-    console.log(res);
+    console.log("Db Connected");
     app.listen(3000);
 
 })
 .catch(err=>{
-    console.log(err);
+    console.log("Db Error");
 })

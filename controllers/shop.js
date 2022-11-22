@@ -5,12 +5,13 @@ const product = require('../models/product');
 exports.getProducts = (req, res, next) => {
   Product.findAll()
     .then(products=>{
-      res.render("shop/product-list",{
-        prods: products,
-        pageTitle: "All Products",
-        path: '/products'
-      });
-
+      res.json({products,sucess:true})
+      // res.render("shop/product-list",{
+      //   prods: products,
+      //   pageTitle: "All Products",
+      // path: '/products'
+      // });
+  
     })
     .catch(err=>console.log(err));
 };

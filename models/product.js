@@ -17,5 +17,8 @@ const product = sequelize.define("product", {
     type:Sequelize.STRING,
     allowNull:false
   }
-})
+},{ // options
+  timestamps: false
+}
+)
 module.exports=product;

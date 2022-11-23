@@ -33,7 +33,7 @@ app.use(shopRoutes);
 app.use(errorController.get404);
 sequelize.sync().then(res=>{
     console.log("Db Connected");
-    app.listen(3000);
+    app.listen(4000);
 
 })
 .catch(err=>{
